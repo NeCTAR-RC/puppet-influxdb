@@ -88,6 +88,7 @@ class influxdb::params {
   $continuous_queries_enabled                   = true
   $continuous_queries_log_enabled               = true
   $continuous_queries_run_interval              = undef
+  $repo_stage                                   = 'main'
 
   case $::osfamily {
     'Debian': {
