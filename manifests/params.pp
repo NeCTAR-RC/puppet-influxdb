@@ -89,6 +89,7 @@ class influxdb::params {
   $continuous_queries_run_interval              = undef
   $influxdb_user                                = 'influxdb'
   $influxdb_group                               = 'influxdb'
+  $repo_stage                                   = 'main'
   case $::osfamily {
     'Debian', 'RedHat', 'Amazon': {
       $manage_repos = true

@@ -2,13 +2,16 @@
 class influxdb::server::install {
   $ensure = $influxdb::server::ensure
   $version = $influxdb::server::version
+  $repo_stage = $influxdb::server::repo_stage
 
   Exec {
     path => '/usr/bin:/bin',
   }
 
   if $influxdb::server::manage_repos {
-    class { 'influxdb::repo': }
+    class { 'influxdb::repo':
+      stage => $repo_stage,
+    }
   }
 
   if $influxdb::server::manage_install {
