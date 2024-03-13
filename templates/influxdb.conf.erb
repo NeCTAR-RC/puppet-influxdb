@@ -31,23 +31,6 @@
     result.empty? ? '' : result.join("\n")
   end
 
-  def build_sub_section(section_name, config)
-
-    result = []
-
-    if config and ! config.empty?
-
-      result << "[[#{section_name}]]"
-
-      config.each do |name, data|
-        result << build_section(name, data, false)
-      end
-
-    end
-
-    result.empty? ? '' : result.join("\n").chomp
-  end
-
 -%>
 
 # GLOBAL configuration options
@@ -75,12 +58,12 @@
 
 <%= build_section('hinted-handoff', @hinted_handoff_config) %>
 
-<%= build_sub_section('graphite', @graphite_config) %>
+<%= build_section('graphite', @graphite_config) %>
 
-<%= build_sub_section('collectd', @collectd_config) %>
+<%= build_section('collectd', @collectd_config) %>
 
-<%= build_sub_section('opentsdb', @opentsdb_config) %>
+<%= build_section('opentsdb', @opentsdb_config) %>
 
-<%= build_sub_section('udp', @udp_config) %>
+<%= build_section('udp', @udp_config) %>
 
 <%= build_section('continuous_queries', @continuous_queries_config) %>
