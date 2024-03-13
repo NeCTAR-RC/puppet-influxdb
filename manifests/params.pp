@@ -110,64 +110,56 @@ class influxdb::params {
   }
 
   $graphite_config = {
-    'default' => {
-      'enabled'           => false,
-      'database'          => 'graphite',
-      'retention-policy'  => '',
-      'bind-address'      => ':2003',
-      'protocol'          => 'tcp',
-      'consistency-level' => 'one',
-      'batch-size'        => 5000,
-      'batch-pending'     => 10,
-      'batch-timeout'     => '1s',
-      'udp-read-buffer'   => 0,
-      'separator'         => '.',
-      'tags'              => [],
-      'templates'         => [],
-    }
+    'enabled'           => false,
+    'database'          => 'graphite',
+    'retention-policy'  => '',
+    'bind-address'      => ':2003',
+    'protocol'          => 'tcp',
+    'consistency-level' => 'one',
+    'batch-size'        => 5000,
+    'batch-pending'     => 10,
+    'batch-timeout'     => '1s',
+    'udp-read-buffer'   => 0,
+    'separator'         => '.',
+    'tags'              => [],
+    'templates'         => [],
   }
 
   $collectd_config = {
-    'default' => {
-      'enabled'          => false,
-      'bind-address'     => ':25826',
-      'database'         => 'collectd',
-      'retention-policy' => '',
-      'typesdb'          => '/usr/share/collectd/types.db',
-      'batch-size'       => 5000,
-      'batch-pending'    => 10,
-      'batch-timeout'    => '10s',
-      'read-buffer'      => 0,
-    }
+    'enabled'          => false,
+    'bind-address'     => ':25826',
+    'database'         => 'collectd',
+    'retention-policy' => '',
+    'typesdb'          => '/usr/share/collectd/types.db',
+    'batch-size'       => 5000,
+    'batch-pending'    => 10,
+    'batch-timeout'    => '10s',
+    'read-buffer'      => 0,
   }
 
   $opentsdb_config = {
-    'default' => {
-      'enabled'           => false,
-      'bind-address'      => ':4242',
-      'database'          => 'opentsdb',
-      'retention-policy'  => '',
-      'consistency-level' => 'one',
-      'tls-enabled'       => false,
-      'certificate'       => '/etc/ssl/influxdb.pem',
-      'log-point-errors'  => true,
-      'batch-size'        => 1000,
-      'batch-pending'     => 5,
-      'batch-timeout'     => '1s'
-    }
+    'enabled'           => false,
+    'bind-address'      => ':4242',
+    'database'          => 'opentsdb',
+    'retention-policy'  => '',
+    'consistency-level' => 'one',
+    'tls-enabled'       => false,
+    'certificate'       => '/etc/ssl/influxdb.pem',
+    'log-point-errors'  => true,
+    'batch-size'        => 1000,
+    'batch-pending'     => 5,
+    'batch-timeout'     => '1s'
   }
 
   $udp_config = {
-    'default' => {
-      'enabled'          => false,
-      'bind-address'     => ':8089',
-      'database'         => 'udp',
-      'retention-policy' => '',
-      'batch-size'       => 5000,
-      'batch-pending'    => 10,
-      'batch-timeout'    => '1s',
-      'read-buffer'      => 0,
-    }
+    'enabled'          => false,
+    'bind-address'     => ':8089',
+    'database'         => 'udp',
+    'retention-policy' => '',
+    'batch-size'       => 5000,
+    'batch-pending'    => 10,
+    'batch-timeout'    => '1s',
+    'read-buffer'      => 0,
   }
 
   $continuous_queries_config = {
